@@ -8,9 +8,14 @@ In this paper, we propose WikiREVIEW, a novel multi-perspective review framework
 
 ## Setup
 
-Requirements:
-* Debian-based (e.g. Debian, Ubuntu, ...) system 
-* [conda](https://docs.conda.io/en/latest/) installed
+### Dependencies:
+```bash
+conda create -n wiki python=3.11
+git clone https://github.com/Stubborn-z/WikiReview.git
+cd WikiReview
+# Install requirements
+pip install -r requirements.txt
+```
 
 Run the following command to quickly setup the env needed to run our code:
 ```bash
