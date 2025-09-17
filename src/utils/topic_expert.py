@@ -5,21 +5,20 @@ from typing import Union, List
 from urllib.parse import urlparse
 
 import requests
-from modules.utils import DialogueTurn, limit_word_count_preserve_newline, remove_uncompleted_sentences_with_citations
 
 import dspy
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 class MySerperRM(dspy.Retrieve):
-    def __init__(self, ydc_api_key=None, k=3):
+    def __init__(self, serper_api_key=None, k=3):
         super().__init__(k=k)
-        if not ydc_api_key and not os.environ.get("YDC_API_KEY"):
-            raise RuntimeError("You must supply ydc_api_key or set environment variable YDC_API_KEY")
-        elif ydc_api_key:
-            self.ydc_api_key = ydc_api_key
+        if not serper_api_key and not os.environ.get("SERPER_API_KEY"):
+            raise RuntimeError("You must supply serper_api_key or set environment variable SERPER_API_KEY")
+        elif serper_api_key:
+            self.serper_api_key = serper_api_key
         else:
-            self.ydc_api_key = os.environ["YDC_API_KEY"]
+            self.serper_api_key = os.environ["SERPER_API_KEY"]
 
         # The Wikipedia standard for sources.
         self.generally_unreliable = None
@@ -94,9 +93,9 @@ class MySerperRM(dspy.Retrieve):
         collected_results = []
         for query in queries:
             try:
-                headers = {"X-API-Key": self.ydc_api_key}
+                headers = {"X-API-Key": self.serper_api_key}
                 results = requests.get(
-                    f"https://api.ydc-index.io/search?query={query}",
+                    f"https://api.serper-index.io/search?query={query}",
                     headers=headers,
                 ).json()
 
