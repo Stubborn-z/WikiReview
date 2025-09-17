@@ -1,8 +1,8 @@
  <h1 align ="center"> WikiREVIEW:A Multi-Perspective Review Framework for Automatic Wiki-Style Article Generation </h1>
 
-Code for the paper "Extractive Medical Entity Disambiguation with Memory Mechanism and Identified Entity Information". \\
+Code for the paper "Extractive Medical Entity Disambiguation with Memory Mechanism and Identified Entity Information". \
 
-In this paper, we propose a novel approach called Extractive Medical Entity Disambiguation with Memory Mechanism and Identified Entity Information. Specifically, we reframe MED as a text extraction task, which simultaneously accepts the entire context of medical mentions, all possible candidate entities, and entity definitions, and it is then trained to extract the text span corresponding to the correct entity.. 
+In this paper, we propose WikiREVIEW, a novel multi-perspective review framework for automatic wiki-style article generation. Specifically, our proposed method introduces multi-perspective experts to review the content of each outline chapter at both chapter and paragraph levels following the initial generation, offering evaluation feedback and continuously refining the numerous deficiencies in the initial long-form article, ultimately achieving high-quality wiki-style article generation.. 
 
 
 
