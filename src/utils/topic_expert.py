@@ -11,7 +11,7 @@ import dspy
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-class MyYouRM(dspy.Retrieve):
+class MySerperRM(dspy.Retrieve):
     def __init__(self, ydc_api_key=None, k=3):
         super().__init__(k=k)
         if not ydc_api_key and not os.environ.get("YDC_API_KEY"):
